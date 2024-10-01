@@ -1,0 +1,112 @@
+1. Connect to Internet:
+
+iwctl
+adapter phy0 set-property Powered on
+device wlan0 set-property Powered on
+station wlan0 connect Sharma-5G
+device wlan0 show
+exit
+
+ip addr show
+ping google.com
+
+2. Update Pacman & Time-Sync:
+
+pacman-key --init
+pacman-key --populate archlinux
+timedatectl set-ntp true
+
+3. Disk Management:
+
+lsblk
+cfdisk /dev/sda
+[ Max	Linux FileSystem	 /home ]
+-> Delete, Create, Write & Quit
+
+mkfs.ext4 /dev/sda1
+
+lsblk
+cfdisk /dev/sdb
+[ 500M	BIOS Boot 		      ]
+[ 10G	Efi System		/efi  ]
+[ 50G	Linux FileSystem	/boot ]
+[ 16G	Linux Swap		swap  ]
+[ 162G	Linux FileSystem	/     ]
+
+mkfs.fat -F32 /dev/sdb2
+mkfs.ext4 /dev/sdb3
+mkswap /dev/sdb4
+mkfs.ext4 /dev/sdb5
+
+mount /dev/sdb5 /mnt
+mount --mkdir /dev/sdb2 /mnt/efi
+mount --mkdir /dev/sdb3 /mnt/boot
+swapon /dev/sdb4
+mount --mkdir /dev/sda1 /mnt/home
+
+Save Partition Table:
+
+lsblk
+mkdir /mnt/etc
+genfstab -U -p /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+
+Install Packages:
+
+pacstrap -i /mnt base
+arch-chroot /mnt /bin/bash
+
+pacman -S vim base-devel openssh
+systemctl enable sshd
+pacman -S networkmanager netctl dialog
+systemctl enable NetworkManager
+
+pacman -S grub efibootmgr intel-ucode mesa
+pacman -S neofetch git htop qutebrowser kitty
+
+System-Config (Part-1):
+
+vim /etc/locale.gen
+[ Uncomment en_US.UTF-8 UTF-8 ]
+[           en_US ISO-8859-1  ]
+locale-gen
+
+passwd
+useradd -m -g users -G wheel iCode
+passwd iCode
+EDITOR=vim visudo
+[ Uncomment %wheel ALL=(ALL) ALL ]
+
+mkdir /boot/grub
+grub-install --boot-directory=/boot --efi-directory=/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+
+umount -R /mnt
+poweroff
+[ Remove USB Stick ]
+
+System-Config (Part-2):
+
+nmcli device wifi connect Sharma-5G password Sharma2303
+hostnamectl set-hostname iCode-archlinux
+
+timedatectl list-timezones
+[searched for mine with /Asia/Kolkata ]
+timedatectl set-timezone Asia/Kolkata
+systemctl enable systemd-timesyncd
+timedatectl set-ntp true
+
+yay-Installation:
+
+pacman -Suy
+git clone https://aur.archlinux.org/yay.git
+cd yay; makepkg -si
+
+sudo pacman -S pipewire pipewire-pulse alsa-utils
+alsamixer
+[ Press 'M' key to unmute master-sound ]
+[ Increase volume using arrow keys ]
+[ Press 'Esc' to exit ]
+
+sudo pacman -S mpv
