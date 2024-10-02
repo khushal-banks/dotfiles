@@ -26,6 +26,8 @@ settings:
     global: 30%
   content.blocking.method:
     global: both
+  content.javascript.clipboard:
+    global: access
   content.proxy:
     global: system
   fonts.completion.entry:

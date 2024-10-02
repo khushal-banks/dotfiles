@@ -1,4 +1,7 @@
 #! /bin/bash
+#
+# wlogout --protocol layer-shell
+# waybar would also need theme selection
 
 PID=$(pgrep $1)
 

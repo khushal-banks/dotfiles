@@ -12,6 +12,7 @@ shift
 
 [ -z $1 ] && CONTENT="$QUTE_SELECTED_TEXT" || CONTENT="$*"
 
-TRANSLATION=`trans :$LANG -show-original=n -show-translation=n -show-languages=n -show-prompt-message=n -show-original-dictionary=n -show-dictionary=n -show-alternatives=Y -indent 1 "$CONTENT" | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2};?)?)?[mGK]//g"`
+# TRANSLATION=`trans :$LANG -show-original=n -show-translation=n -show-languages=n -show-prompt-message=n -show-original-dictionary=n -show-dictionary=n -show-alternatives=Y -indent 1 "$CONTENT" | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2};?)?)?[mGK]//g"`
+TRANSLATION=`trans :$LANG -show-original=n -show-translation=n -show-languages=n -show-prompt-message=n -show-original-dictionary=n -show-dictionary=n -show-alternatives=Y -indent 1 "$CONTENT" | sed $'s/\033\[[0-9;]*m//g'`
 
 notify-send "$TRANSLATION"
