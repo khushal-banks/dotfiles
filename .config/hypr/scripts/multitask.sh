@@ -24,28 +24,34 @@ multitask_cold() {
 	cd /home/iCode/.config/mpv/;
 	echo `cat mpvHistory.log | tail -n1 | cut -d ']' -f 2-2 | cut -d '[' -f 1-1 | cut -d ' ' -f 2-`
 	cd - >> /dev/null
+	notify-send -u low "    Cold-Start"
 }
 
 cmd_start() {
 	multitask_on
+	notify-send -u low "    Start"
 }
 
 cmd_stop() {
 	echo '{ "command": ["quit"] }' | socat - /tmp/mpvsocket
 	multitask_off
+	notify-send -u low "󰘪    Stop"
 }
 
 cmd_pause() {
 	echo '{ "command": ["cycle", "pause"] }' | socat - /tmp/mpvsocket
 	[ $STATUS == "multitask_off" ] && multitask_on || multitask_off
+	[ $STATUS == "multitask_off" ] && notify-send -u low "    Pause" || notify-send -u low "󰴄    Resume"
 }
 
 cmd_forward() {
 	[ $1 -eq 10 ] && echo '{ "command": ["seek", "+10"] }' | socat - /tmp/mpvsocket || echo '{ "command": ["seek", "+30"] }' | socat - /tmp/mpvsocket
+	[ $1 -eq 10 ] && notify-send -u low "    Forward-$1" || notify-send -u low " 󰓘   Forward-$1"
 }
 
 cmd_backward() {
 	[ $1 -eq 10 ] && echo '{ "command": ["seek", "-10"] }' | socat - /tmp/mpvsocket || echo '{ "command": ["seek", "-30"] }' | socat - /tmp/mpvsocket
+	[ $1 -eq 10 ] && notify-send -u low "    Backward-$1" || notify-send -u low " 󰓖   Backward-$1"
 }
 
 [ -z $1 ] && exit

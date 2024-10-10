@@ -1,10 +1,15 @@
 #! /bin/bash
 
+DATE=`date "+%b-%d_%I-%M%p"`
+FILE="/home/iCode/.hyper-base/quotes${DATE}.backup"
+
 check() {
-		TIME=`date "+ [ %V : %a ]  -  %b %d, %I:%M %p"`
-		QUOTE=`motivate | sed $'s/\033\[[0-9;]*m//g'`
-		notify-send -u critical "$QUOTE"
-		notify-send " $TIME"
+	TIME=`date "+ [ %V : %a ]  -  %b %d, %I:%M %p"`
+	QUOTE=`motivate | sed $'s/\033\[[0-9;]*m//g'`
+
+	echo "${QUOTE}" >> ${FILE}
+	notify-send -u critical "$QUOTE"
+	notify-send " $TIME"
 }
 
 COUNT=`pgrep -c alarm.sh`
@@ -16,6 +21,8 @@ if [ $COUNT -le 1 ]; then
 
 			TIME=`date "+ [ %V : %a ]  -  %b %d, %I:%M %p"`
 			QUOTE=`motivate | sed $'s/\033\[[0-9;]*m//g'`
+
+			echo "${QUOTE}" >> ${FILE}
 			notify-send -u critical "$QUOTE"
 			notify-send " $TIME"
 			sleep 60
