@@ -15,7 +15,7 @@ LINE5=`last | grep tty1 | grep $USER | head -n5 | tail -n1 | cut -c 40-`
 # notify-send -t 3000 "$LINE1"
 
 notification() {
-	hyprctl notify $1 3000 "rgb(1f494b)" "fontsize:28   - $2"
+	hyprctl notify $1 7000 "rgb(1f494b)" "fontsize:28   - $2"
 	sleep 0.18
 }
 

@@ -26,4 +26,3 @@ decoration {
 }
 
 windowrule = opacity 1.0, mpv
-windowrule = stayfocused, qutebrowser

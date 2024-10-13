@@ -7,7 +7,8 @@ multitask_off() {
 	unlink multitask
 	ln -s multitask_off multitask
 	cd - >> /dev/null
-	tmux set status on
+#	tmux set status on
+#  alacritty msg config font.size=15
 }
 
 multitask_on() {
@@ -15,7 +16,8 @@ multitask_on() {
 	unlink multitask
 	ln -s multitask_on multitask
 	cd - >> /dev/null
-	tmux set status off
+#	tmux set status off
+#  alacritty msg config font.size=20
 }
 
 multitask_cold() {
@@ -41,7 +43,7 @@ cmd_stop() {
 cmd_pause() {
 	echo '{ "command": ["cycle", "pause"] }' | socat - /tmp/mpvsocket
 	[ $STATUS == "multitask_off" ] && multitask_on || multitask_off
-	[ $STATUS == "multitask_off" ] && notify-send -u low "    Pause" || notify-send -u low "󰴄    Resume"
+	[ $STATUS == "multitask_off" ] && notify-send -u low "󰴄    Resume" || notify-send -u low "    Pause"
 }
 
 cmd_forward() {
