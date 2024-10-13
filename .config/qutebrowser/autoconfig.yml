@@ -41,5 +41,19 @@ settings:
   spellcheck.languages:
     global:
     - en-US
+  tabs.last_close:
+    global: blank
+  tabs.position:
+    global: top
+  tabs.show:
+    global: switching
+  tabs.show_switching_delay:
+    global: 3000
+  tabs.title.alignment:
+    global: left
+  tabs.width:
+    global: 40%
+  window.transparent:
+    global: true
   zoom.default:
     global: '100'
