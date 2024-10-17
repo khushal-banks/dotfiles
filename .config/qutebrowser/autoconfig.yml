@@ -46,7 +46,7 @@ settings:
   tabs.position:
     global: top
   tabs.show:
-    global: switching
+    global: multiple
   tabs.show_switching_delay:
     global: 3000
   tabs.title.alignment:

@@ -1,14 +1,14 @@
 #! /bin/bash
-
+#
 # Flags:
-
+#
 # r: region
 # s: screen
 #
 # c: clipboard
 # f: file
 # i: interactive
-
+#
 # p: pixel
 
 if [[ $1 == rc ]]; then
