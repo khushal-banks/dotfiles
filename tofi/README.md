@@ -1,32 +1,21 @@
 # tofi
 
-### themes
-[soy-milk](https://github.com/philj56/tofi/blob/master/themes/soy-milk)
-[fullscreen](https://github.com/philj56/tofi/blob/master/themes/fullscreen)
-
-### docs
 [config](https://github.com/philj56/tofi/blob/master/doc/config)
-[guide](https://github.com/philj56/tofi/blob/master/doc/tofi.5.md)
-[manpage](https://github.com/philj56/tofi/blob/master/doc/tofi.1.md)
+ | [guide](https://github.com/philj56/tofi/blob/master/doc/tofi.5.md)
+ | [manpage](https://github.com/philj56/tofi/blob/master/doc/tofi.1.md)
 
-### install tofi
+### Install tofi
 
 It is highly recommended to use **tofi-git**, or else you may have to do some tweaks on your own.
 ```
 yay -S tofi-git
 ```
 
-### usage
+### Usage
 
-Copy tofi directory to ~/.config/
-
-Test tofi:
-```
-tofi-drun
-```
-
-Switch tofi-styles:
-Check, [tofiswitch.sh]
+- Copy tofi directory to `~/.config/`
+- Test tofi with `tofi-drun` command
+- Switch tofi styles with [`tofiswitch`](https://github.com/Peaceful-Times/dotfiles/blob/devel/scripts/tofiswitch.sh?plain=1#L3) script
 
 ### Hyprland Configuration
 
