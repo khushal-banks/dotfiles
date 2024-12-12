@@ -1,2 +1,11 @@
+# Unrelated files (Or not yet ready to publish)
 scripts/updatedots.sh
 scripts/readme.sh
+scripts/hyprswitch/kitty.py
+scripts/hyprswitch/tmux.py
+scripts/hyprswitch/playerctl.py
+
+# Garbage
+scripts/hyprswitch/__pycache__
+*/.backup
+*/*/.backup

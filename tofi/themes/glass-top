@@ -1,12 +1,7 @@
-# Font
-font = JetBrains 
-font-size = 9
-
 # Window Style
 horizontal = true
 anchor = top
 width = 65%
-height = 30
 
 outline-width = 0
 border-width = 0
@@ -33,7 +28,16 @@ input-background = #f4cf42
 input-background-padding = 4, 10
 input-background-corner-radius = 12
 
-alternate-result-background = #000A
+# Default result text theme
+default-result-color = #faf3dd
+default-result-background = #0006
+default-result-background-padding = 4, 10
+default-result-background-corner-radius = 12
+
+# Alternate (even-numbered) result text theme
+# NOTE: If unspecified, these all default to the corresponding default-result-* attribute.
+alternate-result-color = #94d2bd
+alternate-result-background = #0009
 alternate-result-background-padding = 4, 10
 alternate-result-background-corner-radius = 12
 

@@ -1,25 +1,32 @@
 # tofi
 
-[config](https://github.com/philj56/tofi/blob/master/doc/config)
+[default](https://github.com/philj56/tofi/blob/master/doc/config)
  | [guide](https://github.com/philj56/tofi/blob/master/doc/tofi.5.md)
  | [manpage](https://github.com/philj56/tofi/blob/master/doc/tofi.1.md)
 
-### Install tofi
+## Install tofi
 
-It is highly recommended to use **tofi-git**, or else you may have to do some tweaks on your own.
-```
+```bash
 yay -S tofi-git
 ```
 
-### Usage
+### ⚠️ Note
+
+It is highly recommended to use **tofi-git**.
+
+👇🏼 or else you may have to do following:
+
+- removing new configuration parameters
+- check errors by running `tofi` or `tofi-drun` on cli
+
+## Usage
 
 - Copy tofi directory to `~/.config/`
-- Test tofi with `tofi-drun` command
-- Switch tofi styles with [`tofiswitch`](https://github.com/Peaceful-Times/dotfiles/blob/devel/scripts/tofiswitch.sh?plain=1#L3) script
+- Copy scripts directory to `~/scripts/`
 
-### Hyprland Configuration
+## Hyprland Configuration
 
-```
+```hyprlang
 # Set your menu program in hyprland.conf
 $menu = tofi-drun
 
@@ -28,7 +35,8 @@ bind = $mainMod, Space, exec, pkill $menu || uwsm app -- $menu
 ```
 
 Or alternatively, if you are **not using uwsm** then,
-```
+
+```hyprlang
 # Set a keybinding for hyprland.desktop wayland-session
 bind = $mainMod, Space, exec, pkill $menu || $menu
 ```

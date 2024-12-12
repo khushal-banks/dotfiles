@@ -2,10 +2,9 @@
 
 Opinionated configuration for some popular tools.
 
-Happy Tweaking!! or maybe not.
+Happy Tweaking!!
 
-NOTICE
-------
+## NOTICE
 
 These files are here for my personal reference only.
 **Use at your own risk.**
@@ -17,17 +16,17 @@ These files are here for my personal reference only.
 
 | Tool          | Official Repo                                                     | Recommendation                         | Script               |
 | ------------- | ----------------------------------------------------------------- | -------------------------------------- | -------------------- |
-| **tofi**      | [GitHub](https://github.com/philj56/tofi)                         | [README](tofi/README.md)               | [tofiswitch](https://github.com/Peaceful-Times/dotfiles/blob/devel/scripts/tofiswitch.sh?plain=1#L3) |
+| **tofi**      | [GitHub](https://github.com/philj56/tofi)                         | [README](tofi/README.md)               | [tofiswitch](https://github.com/Peaceful-Times/dotfiles/blob/devel/scripts/hyprswitch/tofi.py?plain=1#L3) |
 
-
-CONTRIBUTE
-----------
+## CONTRIBUTE
 
 This repository is highly opinionated and new tools' config/script **might not be welcomed** with open arms.
+
 - a good PR with one **bugfix will most likely be merged**.
 - a good PR with one new tools' config may get added to a **dedicated new branch** where it might get polished.
 
 PR, Script or Config is a **RED-FLAG** if it is:
+
 - not simple/hackable
 - simple but complex usage
 - not cli based
@@ -35,10 +34,9 @@ PR, Script or Config is a **RED-FLAG** if it is:
 - inter-dependent (not self dependent)
 - changes are not atomic :-P
 
-FINAL WORDS
------------
+## FINAL WORDS
 
-**Ideally, there should be no contribution for dotfiles** because, opinions are personal.
+**Ideally, there should be no contribution** because, opinions are personal.
 
-- *Everyone has their own opinion and same goes for dotfiles.*
-- Motivate me by putting a star to this repository or close this tab with a smiling face. :)
+- *Everyone has their own opinion and same goes for `dotfiles`.*
+- Motivate me by putting a star or close this tab with a smiling face. :)

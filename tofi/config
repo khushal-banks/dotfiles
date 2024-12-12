@@ -13,10 +13,10 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "Sans"
+	font = "FiraCode"
 
 	# Point size of text.
-	font-size = 24
+	font-size = 9
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
@@ -266,7 +266,7 @@
 	# If true, automatically accept a result if it is the only one
 	# remaining. If there's only one result on startup, window creation is
 	# skipped altogether.
-	auto-accept-single = false
+	auto-accept-single = true
 
 	# If true, typed input will be hidden, and what is displayed (if
 	# anything) is determined by the hidden-character option.
@@ -318,3 +318,4 @@
 	# Configs can be split between multiple files, and then included
 	# within each other.
 	include = theme
+	include = font

@@ -1,6 +1,6 @@
 # Font
-font = Fredoka One
-font-size = 20
+# font = Fredoka One
+# font-size = 20
 
 # Window Style
 horizontal = true
